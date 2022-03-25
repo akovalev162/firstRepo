@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "14a077ad-8674-4671-8b91-5cb7d251ebc9",
+		"name": "DA_User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test limit 49",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "620148799958b64d05331e9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dummyapi.io/data/v1/user?limit=49",
+					"protocol": "https",
+					"host": [
+						"dummyapi",
+						"io"
+					],
+					"path": [
+						"data",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "999",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "49"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
