@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "7def1e6c-a303-42a5-9054-5d9a400a8e59",
+		"name": "A_Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19328511"
+	},
+	"item": [
+		{
+			"name": "Get List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check data[0].image\", function () {\r",
+							"    pm.expect(jsonData.data[0].image).to.eql(\"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[19].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[19].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20] is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.an('undefined');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    pm.expect(jsonData.total).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].link is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[0].link).to.be.an('undefined');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20] is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.an('undefined');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"PostID\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body likes is number\", function () {\r",
+							"    pm.expect(jsonData.likes).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check link \", function () {\r",
+							"    pm.expect(jsonData.link).to.eql(\"123456\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check tags \", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"morning\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check text \", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"good morning\");\r",
+							"});\r",
+							"\r",
+							"  pm.test(\"Check body publishDate is string\", function () {\r",
+							"    pm.expect(jsonData.publishDate).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"  pm.test(\"Check body updatedDate is string\", function () {\r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.id is string\", function () {\r",
+							"    pm.expect(jsonData.owner.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.title\", function () {\r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.firstName\", function () {\r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Ив\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Он\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Он\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Он\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Он\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.picture\", function () {\r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"https://randomuser.me/api/portraits/women/58.jpg\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"good morning\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"link\": \"123456\",\r\n\"tags\": \"morning\",\r\n\"owner\": \"62c0b05e757ac354f3e8b804\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List By User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    pm.expect(jsonData.total).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check data[0].image\", function () {\r",
+							"    pm.expect(jsonData.data[0].image).to.eql(\"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check data[0].owner.picture\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.picture).to.eql(\"https://randomuser.me/api/portraits/women/58.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20] is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.an('undefined');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/user/62c0b05e757ac354f3e8b804/post",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"user",
+						"62c0b05e757ac354f3e8b804",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List By Tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    pm.expect(jsonData.total).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].image\", function () {\r",
+							"    pm.expect(jsonData.data[0].image).to.eql(\"https://img.dummyapi.io/photo-1529015917039-e479726c588e.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].likes is number\", function () {\r",
+							"    pm.expect(jsonData.data[0].likes).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].tags is array\", function () {\r",
+							"    pm.expect(jsonData.data[0].tags).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20] is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.an('undefined');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/tag/dogs/post",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"tag",
+						"dogs",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body likes is number\", function () {\r",
+							"    pm.expect(jsonData.likes).to.be.a(\"number\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body link\", function () {\r",
+							"    pm.expect(jsonData.link).to.eql(\"123456\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body tags\", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"morning\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body text\", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"good morning\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body publishDate is string\", function () {\r",
+							"    pm.expect(jsonData.publishDate).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate is string\", function () {\r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/{{PostID}}",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"{{PostID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"PostID\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body likes is number\", function () {\r",
+							"    pm.expect(jsonData.likes).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body tags\", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"Cats\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body text\", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"string(length: 6-50, preview only)\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"text\": \"string(length: 6-50, preview only)\",\r\n\"likes\": 13,\r\n\"tags\": \"Cats\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/{{PostID}}",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"{{PostID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.get(\"PostID\");\r",
+							"console.log(pm.collectionVariables.get(\"PostID\"));\r",
+							" \r",
+							"\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"PostID\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/{{PostID}}",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"{{PostID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": ""
+		},
+		{
+			"key": "PostID",
+			"value": ""
+		}
+	]
+}
