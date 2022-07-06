@@ -1,0 +1,1985 @@
+{
+	"info": {
+		"_postman_id": "cfbc4a62-e824-40a2-8904-696300727933",
+		"name": "PostApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19328511"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Alexej\",\r\n     \"lastName\": \"Kovalev\",\r\n     \"email\": \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/user/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPost200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPost404",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPage0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=0",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPage1Limit5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=1&limit=5",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPage999Limit50",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=999&limit=50",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "999"
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPage1000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=1000",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageLat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=Lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "Lat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageNoParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?page=",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageNoLimit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?limit=",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageLimit4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?limit=4",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageLimit51",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?limit=51",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "51"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageLimit_Lat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?limit=Lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "Lat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageCreated_NoParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?Created=",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "Created",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageCreated_0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?created=0",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageCreated_1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?created=1",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageCreated_2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?created=2",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostPageCreated_Lat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post?created=lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "lat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_0_Limit_5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=0&Limit=5",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "0"
+						},
+						{
+							"key": "Limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_1_Limit_50",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=1&Limit=50",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "1"
+						},
+						{
+							"key": "Limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_999",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=999",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "999"
+						},
+						{
+							"key": "Limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_1000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=1000",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "1000"
+						},
+						{
+							"key": "Limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_Lat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "lat"
+						},
+						{
+							"key": "Limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Page_NoParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Page=",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": ""
+						},
+						{
+							"key": "Limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Limit_NoParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Limit=",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Limit_4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Limit=4",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Limit_51",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Limit=51",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "51"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Limit_Lat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?Limit=lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat"
+						},
+						{
+							"key": "created",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Created_NoParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?created",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Created_0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?created=0",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Created_1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?created=1",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Created_2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?created=2",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostBy_ID_Created_Lat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/60d21b4667d0d8992e610c85?created=lat",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"60d21b4667d0d8992e610c85"
+					],
+					"query": [
+						{
+							"key": "Page",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "Limit",
+							"value": "lat",
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": "lat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"good morning\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_0_Likes_0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"12345\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_6_Image_String",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"123456\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_49",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"1234567891234567891234567891234567891234567891234\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_50",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"1234567891234567891234567891234567891234567891234\",\r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_NoParam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_Lat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"Latinitsa\", \r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": 123456, \r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_Array",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": [\"123456\"], \r\n\"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n\"likes\": 0,\r\n\"tags\": \"morning\",\r\n\"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostText_Object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  {\"123456\"},\r\n    \"image\": \"http://giftpic.ru/wp-content/uploads/2016/08/oblako-serdce-nad-chashkoj-dobroe-utro-kartinka.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostImage_Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": 123456798,\r\n    \"likes\": 0,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostImage_Array",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": [123456798],\r\n    \"likes\": 0,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostImage_Object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": {123456798},\r\n    \"likes\": 0,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostImage_NoParam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": ,\r\n    \"likes\": 0,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Likes_5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 5,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Likes_NoParam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": ,\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Likes_String",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": \"123\",\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Likes_Array",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": [123],\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Likes_Object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": {123},\r\n    \"tags\": \"morning\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": 777,\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Array",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": [\"777\"],\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": {\"777\"},\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_NoParam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": ,\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_String",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Owner_Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": 62b8008c4d4e7c5a18fae8f9\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Owner_NoParam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Owner_Array",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": [\"62b8008c4d4e7c5a18fae8f9\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Owner_Object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": {\"62b8008c4d4e7c5a18fae8f9\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePost_Tags_Owner_String",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\":  \"123456\",\r\n    \"image\": \"321654\",\r\n    \"likes\": 123,\r\n    \"tags\": \"String\",\r\n    \"owner\": \"62b8008c4d4e7c5a18fae8f9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}{{api-v}}/post/create",
+					"host": [
+						"{{host}}{{api-v}}"
+					],
+					"path": [
+						"post",
+						"create"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "60d21b4667d0d8992e610c85",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
